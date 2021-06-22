@@ -15,7 +15,7 @@ const newPostHandler = async (event) => {
     const content = document.querySelector('#content-entry').value.trim();
     const username = document.querySelector('#username-log').value.trim();
 
-    if (title && content && username) {//Cant have a post unless i have all three of these
+    if (title && content && username) {//Cant have a post unless i have all three of these. With all these three then post is sent to API endpoint
         
         //Sent POST request to the API endpoint
         const response = await fetch('/api/blogpost/newPost', {
@@ -23,7 +23,6 @@ const newPostHandler = async (event) => {
             body: JSON.stringify({ title, content, username }),
             headers: { 'Content-Type': 'application/json' },
         });
-
         if (response.ok) {
             console.log(response);
             //If successful, redirect browser to the homepage

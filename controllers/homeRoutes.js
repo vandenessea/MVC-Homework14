@@ -80,6 +80,7 @@ router.get('/register', async (req, res) => {
 
 // Render New Post page
 router.get('/newPost', async (req, res) => {
+    console.log('Hi')
     try {
         // render 'newPost' view
         res.render('newPost');
